@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Examen Panamera | Samir</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="main-heading">Examen Panamera.</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left-container flex-container">
+                <form>
+                    <h2 class="container-title">Introduce sus calificaciones</h2>
+                    <div class="select-containers">
+                        <!--Mates-->
+                        <div class="select-container">
+                            <label for="mates">Mates</label>
+                            <select id="mates" class="select-marks" onchange="handleChange(this)">
+                                <option value="none">Introduce</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <input class="result-text mates-result" type="text">
+                        </div>
+                        <!--Ciencias-->
+                        <div class="select-container">
+                            <label for="ciencias">Ciencias</label>
+                            <select id="ciencias" class="select-marks" onchange="handleChange(this)">
+                                <option value="none">Introduce</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <input class="result-text ciencias-result" type="text">
+                        </div>
+                        <!--Fisica-->
+                        <div class="select-container">
+                            <label for="fisica">Física</label>
+                            <select id="fisica" class="select-marks" onchange="handleChange(this)">
+                                <option value="none">Introduce</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <input class="result-text fisica-result" type="text">
+                        </div>
+                        <!--Historia-->
+                        <div class="select-container">
+                            <label for="historia">Historia</label>
+                            <select id="historia" class="select-marks" onchange="handleChange(this)">
+                                <option value="none">Introduce</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <input class="result-text historia-result" type="text">
+                        </div>
+                        <!--Literatura-->
+                        <div class="select-container">
+                            <label for="literatura">Literatura</label>
+                            <select id="literatura" class="select-marks" onchange="handleChange(this)">
+                                <option value="none">Introduce</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <input class="result-text literatura-result" type="text">
+                        </div>
+                    </div>
+                    <div class="marks-indicators">
+                        <div class="marks-indicator">
+                            <div class="deficiente"></div>
+                            <p>Deficiente</p>
+                        </div>
+                        <div class="marks-indicator">
+                            <div class="suspendido"></div>
+                            <p>Suspendido</p>
+                        </div>
+                        <div class="marks-indicator">
+                            <div class="bien-apto"></div>
+                            <p>Bien Apto</p>
+                        </div>
+                    </div>
+                    <button class="calculate-button">
+                        Calcular
+                    </button>
+                </form>
+            </div>
+            <div class="right-container flex-container">
+                <img src="./assets/illustration.png" alt="Illustration of taking notes" class="illustration">
+                <div class="result-container">
+                    <div class="result">
+                        <p>Número de asignaturas aprobadas es <span class="aprobadas"></span></p>
+                    </div>
+                    <div class="result">
+                        <p>Número de asignaturas suspendidas es <span class="suspendidas"></span></p>
+                    </div>
+                    <div class="result">
+                        <p>La nota mas alta es <span class="alta"></span></p>
+                    </div>
+                    <div class="result">
+                        <p>El promedio de las notas es <span class="promedio"></span></p>
+                    </div>
+                    <div class="result">
+                        <p class="final-result"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+        integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./examen.js"></script>
+</body>
+</html>
